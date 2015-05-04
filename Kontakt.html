@@ -5,6 +5,7 @@
     <title>FK Sarajevo Galaxy-Naslovnica</title>
     <link rel="stylesheet" type="text/css" href="stil.css">
     <script src="meni.js"></script>
+    <script src="ajax.js"></script>
 
 
 </head>
@@ -15,18 +16,18 @@
         </h2>
         <nav class="meni">
             <ul>
-                <li><a  href="Index.html"  class="popravka" onclick="sakrijMeni()">Naslovna</a></li>
+                <li><a class="popravka" onclick="ajaxPrikazi('Index.html')"  >Naslovna</a></li>
                 <li><a href="#" class="popravka2"  onclick="prikaziMeni()">Tim</a></li>
-                <li><a  href="Utakmice.html"  class="popravka" onclick="sakrijMeni()">Utakmice</a></li>
-                <li><a  href="Opis.html" class="popravka" onclick="sakrijMeni()">O nama</a></li>
-                <li><a  href="Kontakt.html" class="popravka" onclick="sakrijMeni()">Kontakt</a></li>
+                <li><a  onclick="ajaxPrikazi('Utakmice.html')"  class="popravka" >Utakmice</a></li>
+                <li><a onclick="ajaxPrikazi('Opis.html')" class="popravka">O nama</a></li>
+                <li><a  onclick="ajaxPrikazi('Kontakt.html')" class="popravka" >Kontakt</a></li>
                 <li><input type="text" name="tekst"></li>
                 <li><input type="submit" value="Pretraži"></li>
                 <li><input type="submit" value="Prijava"></li>
             </ul>
         </nav>
         <ul id="padajuci" class="meni2" onmouseout="sakrijMeni()" >
-            <li class="razmak" onmouseover="prikaziMeni(); oboji(this);" onmouseout="vratiBoju(this);"><a  href="Tim.html">Igraci</a></li>
+            <li class="razmak" onmouseover="prikaziMeni(); oboji(this);" onmouseout="vratiBoju(this);"><a onclick="ajaxPrikazi('Tim.html')" >Igraci</a></li>
             <li onmouseover="prikaziMeni(); oboji(this);" onmouseout="vratiBoju(this);"><a href="#">Izjave</a></li>
             <li onmouseover="prikaziMeni(); oboji(this);" onmouseout="vratiBoju(this);"><a href="#">Transferi</a></li>
             <li onmouseover="prikaziMeni(); oboji(this);" onmouseout="vratiBoju(this);"><a href="#">Ozljede</a></li>
@@ -56,8 +57,10 @@
                 <input type="text" name="mail2" id="mail2" placeholder="primjer@mail.com" onkeyup="validacijaMaila2()"><label id="provjeriMail2"></label><br>
             Broj mobitela<br>
                 <input type="text" name="mobitel" id="mobitel" placeholder="123-456-789" onkeyup="validacijaMobitela()"><label id="provjeriMobitel"></label><br>
-            Grad<br>
-                <input type="text" name="grad" id="grad" placeholder="Sarajevo" onkeyup="validacijaGrada()"><label id="provjeriGrad"></label><br>
+            Općina<br>
+            <input type="text" name="opcina" id="opcina" placeholder="Travnik" onkeyup="validacijaOpcine()"><label id="provjeriOpcinu"></label><br>
+            Mjesto<br>
+                <input type="text" name="grad" id="grad" placeholder="Travnik" onkeyup="validacijaGrada()"><label id="provjeriGrad"></label><br>
             Poruka<br>
             <textarea name="text" id="text" placeholder="Neka poruka za nas!" onkeyup="validacijaPoruke()"></textarea><br><label id="provjeriPoruku"></label>
             <br><input type="submit" value="Pošalji"><label id="zadnjaProvjera"></label>
